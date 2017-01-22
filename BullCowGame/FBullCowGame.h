@@ -4,6 +4,7 @@
 class FBullCowGame
 {
 public:
+	FBullCowGame();
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
 	bool IsGameWon() const;
@@ -12,6 +13,6 @@ public:
 	bool CheckGuessValidity(std::string);
 
 private:	
-	int MyMaxTries = 5;
-	int MyCurrentTry = 1;
+	int MyMaxTries;
+	int MyCurrentTry;
 };

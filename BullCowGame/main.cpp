@@ -22,6 +22,7 @@ int main()
 
 void PlayGame()
 {
+	BCGame.Reset();
 	const int MaxTries = BCGame.GetMaxTries();
 
 	for (int i = 0; i < MaxTries; ++i)
