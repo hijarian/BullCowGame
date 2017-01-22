@@ -1,19 +1,20 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 
 void PrintIntro();
-string GetGuess();
+std::string GetGuess();
 void PlayGame();
 bool AskToPlayAgain();
 
 int main()
 {
-	PrintIntro();
-	PlayGame();
-	cout << AskToPlayAgain() << endl;
+	do
+	{
+		PrintIntro();
+		PlayGame();
+	} while (AskToPlayAgain());
+
 	return 0; // exit game
 }
 
@@ -23,25 +24,25 @@ void PlayGame()
 
 	for (int i = 0; i < GUESSES_NUMBER; ++i)
 	{
-		cout << "Your guess was: " << GetGuess() << endl;
+		std::cout << "Your guess was: " << GetGuess() << std::endl;
 	}
 }
 
 bool AskToPlayAgain()
 {
-	cout << "Do you want to play again? ";
-	string Response = "";
-	getline(cin, Response);
+	std::cout << "Do you want to play again? ";
+	std::string Response = "";
+	std::getline(std::cin, Response);
 	
 	return (Response[0] == 'y') || (Response[0] == 'Y');
 }
 
-string GetGuess()
+std::string GetGuess()
 {
-	cout << "Tell your guess: ";
+	std::cout << "Tell your guess: ";
 
-	string Guess = "";
-	getline(cin, Guess);
+	std::string Guess = "";
+	std::getline(std::cin, Guess);
 
 	return Guess;
 }
@@ -50,6 +51,6 @@ void PrintIntro()
 {
 	constexpr int WORD_LENGTH = 9;
 	// introduce the game
-	cout << "Welcome to Bulls and Cows" << endl;
-	cout << "World length is " << WORD_LENGTH << " characters and it must be an isogram." << endl;
+	std::cout << "Welcome to Bulls and Cows" << std::endl;
+	std::cout << "World length is " << WORD_LENGTH << " characters and it must be an isogram." << std::endl;
 }
