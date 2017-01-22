@@ -9,4 +9,7 @@ public:
 	int GetCurrentTry();
 	bool IsGameWon();
 	bool CheckGuessValidity(std::string);
+private:	
+	int MyMaxTries = 5;
+	int MyCurrentTry = 1;
 };
