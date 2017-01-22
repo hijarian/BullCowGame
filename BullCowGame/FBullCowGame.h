@@ -9,8 +9,9 @@ public:
 	int GetCurrentTry() const;
 	bool IsGameWon() const;
 
-	void Reset();
-	bool CheckGuessValidity(std::string);
+	void Reset(); // TODO Make a more rich return value
+	bool CheckGuessValidity(std::string); // TODO Make a more rich return value
+	// TODO Provide a method for counting bulls & cows, and increasing try number.
 
 private:	
 	int MyMaxTries;
